@@ -1,6 +1,7 @@
 const { AuthenticationError } = require("apollo-server-express");
 const { User, Feedback } = require("../models");
 const { signToken } = require("../utils/auth");
+const bcrypt = require("bcrypt");
 
 const resolvers = {
   Query: {
@@ -51,12 +52,25 @@ const resolvers = {
 
       return { token, user };
     },
-    //deleteUSer to be tested when I can log in on the front end
     deleteUser: async (parent, args, context) => {
       if (context.user) {
         return User.findOneAndDelete({ _id: context.user._id });
       }
       throw new AuthenticationError("You need to be logged in!");
+    },
+
+    changePassword: async (parent, { password, newPassword }, context) => {
+      const user = await User.findOne(context.user);
+      console.log(context.user);
+      const correctPw = await user.isCorrectPassword(password);
+      console.log(correctPw);
+      if (!correctPw) {
+        throw new AuthenticationError("Current password could not be verified");
+      }
+
+      await User.findOneAndUpdate({ password: newPassword });
+
+      return user;
     },
 
     addFeedback: async (parent, { feedbackText }, context) => {
