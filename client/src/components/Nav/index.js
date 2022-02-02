@@ -2,41 +2,19 @@ import React, { useState } from "react";
 import { Button } from "../Button/index.js";
 import { Link } from "react-router-dom";
 import "./index.css";
-import Dropdown from "../Dropdown/index.js";
 import logo from "../../assest/logo-black-hq.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faTimes,
-  faBars,
-  faCaretDown,
-} from "@fortawesome/free-solid-svg-icons";
+import { faTimes, faBars } from "@fortawesome/free-solid-svg-icons";
+import Auth from "../../utils/auth";
 
 function Navbar() {
   const iconTimes = <FontAwesomeIcon icon={faTimes} />;
   const iconBars = <FontAwesomeIcon icon={faBars} />;
-  const iconArrowDown = <FontAwesomeIcon icon={faCaretDown} />;
 
   const [click, setClick] = useState(false);
-  const [dropdown, setDropdown] = useState(false);
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
-
-  const onMouseEnter = () => {
-    if (window.innerWidth < 960) {
-      setDropdown(false);
-    } else {
-      setDropdown(true);
-    }
-  };
-
-  const onMouseLeave = () => {
-    if (window.innerWidth < 960) {
-      setDropdown(false);
-    } else {
-      setDropdown(false);
-    }
-  };
 
   return (
     <div className="in-line">
@@ -52,7 +30,11 @@ function Navbar() {
         </div>
         <ul className={click ? "nav-menu active" : "nav-menu"}>
           <li className="nav-item">
-            <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+            <Link
+              to="/workshop"
+              className="nav-links"
+              onClick={closeMobileMenu}
+            >
               Workshop
             </Link>
           </li>
@@ -74,30 +56,40 @@ function Navbar() {
               Contact Us
             </Link>
           </li>
-          <li
-            className="nav-item"
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
-          >
+          <li className="nav-item">
             <Link
               to="/services"
               className="nav-links"
               onClick={closeMobileMenu}
             >
-              Services <i>{iconArrowDown}</i>
-            </Link>
-            {dropdown && <Dropdown />}
-          </li>
-
-          <li>
-            <Link
-              to="/sign-up"
-              className="nav-links-mobile"
-              onClick={closeMobileMenu}
-            >
-              Sign Up
+              Services
             </Link>
           </li>
+          {Auth.loggedIn() ? (
+            <>
+              <li>
+                <Link
+                  className="nav-links-mobile"
+                  to="/account"
+                  onClick={closeMobileMenu}
+                >
+                  Account
+                </Link>
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <Link
+                  className="nav-links-mobile"
+                  to="/log-in"
+                  onClick={closeMobileMenu}
+                >
+                  Log In
+                </Link>
+              </li>
+            </>
+          )}
         </ul>
         <Button />
       </nav>

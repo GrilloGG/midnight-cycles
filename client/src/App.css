@@ -5,6 +5,12 @@
   font-family: "PT Sans", sans-serif;
 }
 
+.home {
+  height: 50vh;
+  line-height: 50vh;
+  text-align: center;
+}
+
 .workshop {
   height: 50vh;
   line-height: 50vh;
@@ -21,4 +27,26 @@
   height: 50vh;
   line-height: 50vh;
   text-align: center;
+}
+
+.services {
+  height: 50vh;
+  line-height: 50vh;
+  text-align: center;
+}
+
+.log-in {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20vh;
+}
+
+.sign-up {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20vh;
 }

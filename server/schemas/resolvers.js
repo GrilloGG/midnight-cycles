@@ -68,9 +68,13 @@ const resolvers = {
         throw new AuthenticationError("Current password could not be verified");
       }
 
-      await User.findOneAndUpdate({ password: newPassword });
+      const updatedUser = await User.findOneAndUpdate(
+        { _id: context.user._id },
+        { password: newPassword },
+        { new: true }
+      );
 
-      return user;
+      return updatedUser;
     },
 
     addFeedback: async (parent, { feedbackText }, context) => {

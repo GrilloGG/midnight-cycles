@@ -5,7 +5,7 @@ export default function index() {
   return (
     <>
       <footer>
-        <div class="footer">
+        <div className="footer">
           <p>Copyright &copy; Midnight Cycles 2022</p>
         </div>
       </footer>
