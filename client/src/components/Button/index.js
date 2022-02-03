@@ -30,7 +30,7 @@ export function Button() {
   return (
     <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       <Link to="sign-up">
-        <button className=" btn">
+        <button className=" btn-user">
           <i>
             {iconUser}
             {iconArrowDown}

@@ -40,47 +40,49 @@ const Signup = () => {
   };
 
   return (
-    <div className="sign-up">
-      <h4 className="">Sign Up</h4>
-      <div className="">
-        {data ? (
-          <p>
-            Success! You may now head <Link to="/">back to the homepage.</Link>
-          </p>
-        ) : (
-          <form onSubmit={handleFormSubmit}>
+    <div>
+      {data ? (
+        <p>
+          Success! You may now head <Link to="/">back to the homepage.</Link>
+        </p>
+      ) : (
+        <div className="user-form">
+          <h1 className="title-user">Registration</h1>
+          <form className="form-user" onSubmit={handleFormSubmit}>
             <input
-              className="form-input"
-              placeholder="Your username"
+              className="input-user"
+              placeholder="Username"
               name="username"
               type="text"
               value={formState.name}
               onChange={handleChange}
             />
             <input
-              className="form-input"
-              placeholder="Your email"
+              className="input-user"
+              placeholder="Email"
               name="email"
               type="email"
               value={formState.email}
               onChange={handleChange}
             />
             <input
-              className="form-input"
-              placeholder="******"
+              className="input-user"
+              placeholder="Password"
               name="password"
               type="password"
               value={formState.password}
               onChange={handleChange}
             />
-            <button className="" style={{ cursor: "pointer" }} type="submit">
-              Submit
-            </button>
+            <div className="btns-user">
+              <button className="button-user" type="submit">
+                Register
+              </button>
+            </div>
           </form>
-        )}
+        </div>
+      )}
 
-        {error && <div className="">{error.message}</div>}
-      </div>
+      {error && <div className="">{error.message}</div>}
     </div>
   );
 };

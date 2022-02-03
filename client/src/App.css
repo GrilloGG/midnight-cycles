@@ -2,7 +2,27 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "PT Sans", sans-serif;
+  font-family: "Rubik", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
 }
 
 .home {
@@ -35,18 +55,63 @@
   text-align: center;
 }
 
-.log-in {
+/*Login CSS*/
+.user-form {
+  width: 90%;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding-top: 20vh;
+  text-align: center;
+  margin: 50px auto auto auto;
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  padding: 25px 10px;
+  box-shadow: 0 0 15px rgb(80, 79, 79);
+}
+.form-user {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+.title-user {
+  margin-bottom: 15px;
+}
+.input-user {
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  margin: 10px;
+  padding-left: 10px;
+  font-size: 18px;
+  color: black;
+  background-color: rgb(230, 230, 230);
+}
+.btns-user {
+  margin: 15px auto;
+}
+.button-user {
+  background-color: rgb(48, 48, 48);
+  color: white;
+  border: none;
+  padding: 8px 30px;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 5px 25px;
+}
+.button-user:hover {
+  background-color: #1888ff;
+  color: black;
+  transition: all 0.2s ease-out;
 }
 
-.sign-up {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 20vh;
+.a-user {
+  text-decoration: none;
+  color: #1888ff;
+}
+
+.a-user:hover {
+  text-decoration: underline;
 }
