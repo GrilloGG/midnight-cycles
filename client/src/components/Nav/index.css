@@ -28,10 +28,10 @@
 .nav-menu {
   display: grid;
   grid-template-columns: repeat(5, auto);
-  grid-gap: 40px;
+  grid-gap: 60px;
   list-style: none;
   text-align: center;
-  width: 85vw;
+  width: 90vw;
   justify-content: center;
 }
 

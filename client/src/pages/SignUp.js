@@ -40,7 +40,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="home-page-picture">
+    <div className="background-picture-1">
       {data ? (
         <p>
           Success! You may now head <Link to="/">back to the homepage.</Link>

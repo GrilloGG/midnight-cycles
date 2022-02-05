@@ -4,7 +4,7 @@ import "../App.css";
 const Home = () => {
   return (
     <>
-      <div className="home-page-picture"></div>
+      <div className="background-picture-1"></div>
     </>
   );
 };

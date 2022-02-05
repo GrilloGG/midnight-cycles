@@ -24,10 +24,8 @@ h5,
 h6 {
   overflow-wrap: break-word;
 }
-/* home page */
-.home {
-}
-.home-page-picture {
+
+.background-picture-1 {
   background-image: url("./assest/home-page.jpg");
   background-repeat: repeat;
   background-attachment: fixed;
@@ -35,7 +33,9 @@ h6 {
   width: 100%;
   height: 100vh;
 }
-
+/* home page */
+.home {
+}
 .workshop {
   height: 50vh;
   line-height: 50vh;
@@ -174,5 +174,6 @@ h6 {
   }
   .services {
     padding-top: 3vh;
+    padding-bottom: 15vh;
   }
 }

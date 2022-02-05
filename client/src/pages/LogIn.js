@@ -42,7 +42,7 @@ const Login = props => {
   };
 
   return (
-    <div className="home-page-picture">
+    <div className="background-picture-1">
       {data ? (
         <p>
           <Link to="/"></Link>

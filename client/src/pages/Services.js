@@ -5,7 +5,7 @@ import "../App.css";
 export default function Services() {
   return (
     <>
-      <div className="services home-page-picture">
+      <div className="services background-picture-1">
         <section className="service-card">
           <header>General Service - $80</header>
           <p>
