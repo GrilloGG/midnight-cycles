@@ -7,7 +7,7 @@
 .navbar {
   /*background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);*/
   border-bottom: 2px solid black;
-  height: 80px;
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,18 +28,17 @@
 .nav-menu {
   display: grid;
   grid-template-columns: repeat(5, auto);
-  grid-gap: 10px;
+  grid-gap: 40px;
   list-style: none;
   text-align: center;
-  width: 70vw;
+  width: 85vw;
   justify-content: center;
-  margin-right: 2rem;
 }
 
 .nav-item {
   display: flex;
   align-items: center;
-  height: 80px;
+  height: 60px;
 }
 
 .nav-links {
@@ -49,7 +48,7 @@
 }
 
 .nav-links:hover {
-  background-color: #1888ff;
+  background-color: #d96903;
   border-radius: 4px;
   transition: all 0.2s ease-out;
 }
@@ -78,20 +77,22 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     position: absolute;
-    top: 95px;
+    top: 78px;
     left: -100%;
     opacity: 1;
     transition: all 0.5s ease;
+    z-index: 2;
   }
 
   .nav-menu.active {
-    background: #242222;
+    background: #243a4d;
     left: 0;
+
     opacity: 1;
     transition: all 0.5s ease;
-    z-index: 1;
+    z-index: 2;
   }
 
   .nav-links {
@@ -103,7 +104,7 @@
   }
 
   .nav-links:hover {
-    background-color: #1888ff;
+    background-color: #d96903;
     border-radius: 0;
   }
 
@@ -135,7 +136,7 @@
     margin: 2rem auto;
     border-radius: 4px;
     width: 50%;
-    background: #1888ff;
+    background: #d96903;
     text-decoration: none;
     color: #fff;
     font-size: 1.5rem;
@@ -143,7 +144,7 @@
 
   .nav-links-mobile:hover {
     background: #fff;
-    color: #1888ff;
+    color: #d96903;
     transition: 250ms;
   }
 

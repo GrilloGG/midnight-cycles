@@ -42,43 +42,46 @@ const Login = props => {
   };
 
   return (
-    <div>
+    <div className="home-page-picture">
       {data ? (
         <p>
-          Success! You may now head <Link to="/">back to the homepage.</Link>
+          <Link to="/"></Link>
         </p>
       ) : (
-        <div className="user-form">
-          <h1 className="title-user">Login</h1>
-          <form className="form-user" onSubmit={handleFormSubmit}>
-            <input
-              className="input-user"
-              placeholder="Email"
-              name="email"
-              type="email"
-              value={formState.email}
-              onChange={handleChange}
-            />
-            <input
-              className="input-user"
-              placeholder="Password"
-              name="password"
-              type="password"
-              value={formState.password}
-              onChange={handleChange}
-            />
-            <div className="btns-user">
-              <button className="button-user" type="submit">
-                Log in
-              </button>
-            </div>
-            <p>
-              Don't have an account with us?{" "}
-              <a className="a-user" href="/sign-up">
-                Sign up here
-              </a>
-            </p>
-          </form>
+        <div className="user-form-card">
+          <div className="user-form ">
+            <h1 className="title-user">Login</h1>
+            <form className="form-user" onSubmit={handleFormSubmit}>
+              <input
+                className="input-user"
+                placeholder="Email"
+                name="email"
+                type="email"
+                value={formState.email}
+                onChange={handleChange}
+              />
+              <input
+                className="input-user"
+                placeholder="Password"
+                name="password"
+                type="password"
+                value={formState.password}
+                onChange={handleChange}
+              />
+
+              <div className="btns-user">
+                <button className="button-user" type="submit">
+                  Log in
+                </button>
+              </div>
+              <p>
+                Don't have an account with us?{" "}
+                <a className="a-user" href="/sign-up">
+                  Sign up here
+                </a>
+              </p>
+            </form>
+          </div>
         </div>
       )}
 

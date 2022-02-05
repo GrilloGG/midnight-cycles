@@ -24,11 +24,16 @@ h5,
 h6 {
   overflow-wrap: break-word;
 }
-
+/* home page */
 .home {
-  height: 50vh;
-  line-height: 50vh;
-  text-align: center;
+}
+.home-page-picture {
+  background-image: url("./assest/home-page.jpg");
+  background-repeat: repeat;
+  background-attachment: fixed;
+  overflow: scroll;
+  width: 100%;
+  height: 100vh;
 }
 
 .workshop {
@@ -48,14 +53,57 @@ h6 {
   line-height: 50vh;
   text-align: center;
 }
-
+/* Services page */
 .services {
-  height: 50vh;
-  line-height: 50vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  padding-top: 18vh;
+}
+.service-card {
+  border-radius: 4px;
+  box-shadow: 0 0 10px #243a4d;
+  margin: 0px 30px 0 30px;
+  padding: 0px 0px 15px 0px;
+  width: 25%;
+  background-color: white;
+  min-height: 450px;
+}
+.service-card header {
+  padding: 20px;
+  font-weight: 600;
+  font-size: 20px;
   text-align: center;
+  background: #243a4d;
+  color: white;
+}
+.service-card p {
+  margin: 25px 15px 25px 15px;
+  text-align: justify;
+  line-height: 1.5rem;
 }
 
-/*Login CSS*/
+.pop-up-button {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+/*Login page*/
+.user-form-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+  padding-top: 18vh;
+}
 .user-form {
   width: 90%;
   max-width: 600px;
@@ -63,7 +111,7 @@ h6 {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin: 50px auto auto auto;
+
   background-color: rgb(255, 255, 255);
   border-radius: 15px;
   padding: 25px 10px;
@@ -102,8 +150,8 @@ h6 {
   margin: 5px 25px;
 }
 .button-user:hover {
-  background-color: #1888ff;
-  color: black;
+  background-color: #d96903;
+  color: white;
   transition: all 0.2s ease-out;
 }
 
@@ -114,4 +162,17 @@ h6 {
 
 .a-user:hover {
   text-decoration: underline;
+}
+
+@media screen and (max-width: 960px) {
+  .service-card {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 20px;
+    min-height: fit-content;
+  }
+  .services {
+    padding-top: 3vh;
+  }
 }

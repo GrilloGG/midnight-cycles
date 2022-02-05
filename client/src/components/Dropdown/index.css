@@ -1,10 +1,11 @@
 .dropdown-menu {
   width: 150px;
   position: absolute;
-  right: 150px;
+  right: 30px;
   list-style: none;
   text-align: start;
   text-align: center;
+  z-index: 2;
 }
 
 .dropdown-menu li {
@@ -16,7 +17,7 @@
 }
 
 .dropdown-menu li:hover {
-  background: #1888ff;
+  background: #d96903;
   border-radius: 4px;
   color: white;
 }

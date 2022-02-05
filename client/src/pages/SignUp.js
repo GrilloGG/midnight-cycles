@@ -40,45 +40,47 @@ const Signup = () => {
   };
 
   return (
-    <div>
+    <div className="home-page-picture">
       {data ? (
         <p>
           Success! You may now head <Link to="/">back to the homepage.</Link>
         </p>
       ) : (
-        <div className="user-form">
-          <h1 className="title-user">Registration</h1>
-          <form className="form-user" onSubmit={handleFormSubmit}>
-            <input
-              className="input-user"
-              placeholder="Username"
-              name="username"
-              type="text"
-              value={formState.name}
-              onChange={handleChange}
-            />
-            <input
-              className="input-user"
-              placeholder="Email"
-              name="email"
-              type="email"
-              value={formState.email}
-              onChange={handleChange}
-            />
-            <input
-              className="input-user"
-              placeholder="Password"
-              name="password"
-              type="password"
-              value={formState.password}
-              onChange={handleChange}
-            />
-            <div className="btns-user">
-              <button className="button-user" type="submit">
-                Register
-              </button>
-            </div>
-          </form>
+        <div className="user-form-card">
+          <div className="user-form">
+            <h1 className="title-user">Registration</h1>
+            <form className="form-user" onSubmit={handleFormSubmit}>
+              <input
+                className="input-user"
+                placeholder="Username"
+                name="username"
+                type="text"
+                value={formState.name}
+                onChange={handleChange}
+              />
+              <input
+                className="input-user"
+                placeholder="Email"
+                name="email"
+                type="email"
+                value={formState.email}
+                onChange={handleChange}
+              />
+              <input
+                className="input-user"
+                placeholder="Password"
+                name="password"
+                type="password"
+                value={formState.password}
+                onChange={handleChange}
+              />
+              <div className="btns-user">
+                <button className="button-user" type="submit">
+                  Register
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       )}
 
