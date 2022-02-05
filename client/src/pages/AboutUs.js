@@ -2,5 +2,13 @@ import React from "react";
 import "../App.css";
 
 export default function AboutUs() {
-  return <h1 className="about-us">This is about us</h1>;
+  return (
+    <>
+      <div className="background-picture-1">
+        <div>
+          <h2>Blake Hunter</h2>
+        </div>
+      </div>
+    </>
+  );
 }
