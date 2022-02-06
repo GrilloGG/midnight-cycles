@@ -11,7 +11,6 @@ import "./App.css";
 
 import Nav from "./components/Nav";
 import Home from "./pages/Home";
-import Workshop from "./pages/Workshop";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 import Services from "./pages/Services";
@@ -52,13 +51,12 @@ function App() {
           <Nav />
           <Routes>
             <Route exact path="/" element={<Home />} />
-            <Route exact path="/workshop" element={<Workshop />} />
             <Route exact path="/about-us" element={<AboutUs />} />
             <Route exact path="/Services" element={<Services />} />
             <Route exact path="/contact-us" element={<ContactUs />} />
             <Route exact path="/log-in" element={<LogIn />} />
             <Route exact path="/sign-up" element={<SignUp />} />
-            <Route exact path="/account" element={<Account />} />
+            <Route exact path="/account/" element={<Account />} />
           </Routes>
           <Footer />
         </Router>

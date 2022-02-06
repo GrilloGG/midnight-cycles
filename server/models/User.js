@@ -19,6 +19,12 @@ const userSchema = new Schema({
     required: true,
     minlength: 8,
   },
+  feedbacks: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Feedback",
+    },
+  ],
 });
 
 userSchema.pre("save", async function (next) {
@@ -30,9 +36,10 @@ userSchema.pre("save", async function (next) {
   next();
 });
 
-userSchema.pre("findOneAndUpdate", async function () {
-  this._update.password = await bcrypt.hash(this._update.password, 10);
-});
+//userSchema.pre("findOneAndUpdate", async function (next) {
+//this._update.password = await bcrypt.hash(this._update.password, 10);
+// next();
+//});
 
 userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);

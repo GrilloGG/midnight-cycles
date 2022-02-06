@@ -6,6 +6,22 @@ export const QUERY_USER = gql`
       _id
       username
       email
+      feedbacks {
+        _id
+        feedbackText
+        createdAt
+      }
+    }
+  }
+`;
+
+export const QUERY_FEEDBACKS = gql`
+  query feedbacks {
+    feedbacks {
+      _id
+      feedbackText
+      feedbackAuthor
+      createdAt
     }
   }
 `;
@@ -16,6 +32,12 @@ export const QUERY_ME = gql`
       _id
       username
       email
+      feedbacks {
+        _id
+        feedbackText
+        feedbackAuthor
+        createdAt
+      }
     }
   }
 `;

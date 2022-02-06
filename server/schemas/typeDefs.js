@@ -6,6 +6,7 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
+    feedbacks: [Feedback]!
   }
 
   type Auth {
@@ -22,8 +23,8 @@ const typeDefs = gql`
 
   type Query {
     users: [User]!
-    user(userId: ID!): User
-    feedbacks(username: String): [Feedback]
+    user(username: ID!): User
+    feedbacks: [Feedback]!
     feedback(feedbackId: ID!): Feedback
     me: User
   }

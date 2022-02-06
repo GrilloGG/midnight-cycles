@@ -31,13 +31,14 @@ function Navbar() {
         <ul className={click ? "nav-menu active" : "nav-menu"}>
           <li className="nav-item">
             <Link
-              to="/workshop"
+              to="/services"
               className="nav-links"
               onClick={closeMobileMenu}
             >
-              Workshop
+              Services
             </Link>
           </li>
+
           <li className="nav-item">
             <Link
               to="/about-us"
@@ -56,15 +57,7 @@ function Navbar() {
               Contact Us
             </Link>
           </li>
-          <li className="nav-item">
-            <Link
-              to="/services"
-              className="nav-links"
-              onClick={closeMobileMenu}
-            >
-              Services
-            </Link>
-          </li>
+
           {Auth.loggedIn() ? (
             <>
               <li>

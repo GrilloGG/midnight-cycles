@@ -1,7 +1,18 @@
 import React from "react";
 import "../App.css";
+import { useQuery } from "@apollo/client";
+import FeedbackList from "../components/FeedbackList";
 
-export default function Workshop() {
+import { QUERY_FEEDBACKS } from "../utils/queries";
+
+export default function Home() {
+  const { loading, data } = useQuery(QUERY_FEEDBACKS);
+  if (data) {
+    console.log(data);
+  }
+
+  const feedbacks = data?.feedbacks || [];
+  console.log(feedbacks);
   return (
     <>
       <div className="background-picture-1">
@@ -18,6 +29,18 @@ export default function Workshop() {
               Cycles!
             </p>
           </div>
+        </div>
+
+        <div className="reviews-div">
+          <h2>Some of the lastest reviews:</h2>
+          {loading ? (
+            <div>Loading...</div>
+          ) : (
+            <FeedbackList
+              feedbacks={feedbacks}
+              title="Some Feed for Thought(s)..."
+            />
+          )}
         </div>
       </div>
     </>

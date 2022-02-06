@@ -4,7 +4,7 @@ const dateFormat = require("../utils/dateFormat");
 const feedbackSchema = new Schema({
   feedbackText: {
     type: String,
-    required: "You need to leave a feedback!",
+    required: "You need to leave a review!",
     minlength: 1,
     maxlength: 280,
     trim: true,

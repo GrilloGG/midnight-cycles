@@ -5,12 +5,11 @@
   margin-top: 1.5rem;
 }
 .navbar {
-  /*background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);*/
-  border-bottom: 2px solid black;
   height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 200px;
   font-size: 1.2rem;
 }
 
@@ -31,7 +30,7 @@
   grid-gap: 60px;
   list-style: none;
   text-align: center;
-  width: 90vw;
+  width: 70vw;
   justify-content: center;
 }
 
@@ -112,6 +111,7 @@
     max-width: 12rem;
     cursor: pointer;
     text-decoration: none;
+    margin-left: 2rem;
   }
 
   .menu-icon {
@@ -154,7 +154,7 @@
 
   .in-line {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     padding-bottom: 1rem;
     border-bottom: 2px solid black;

@@ -6,16 +6,15 @@ const bcrypt = require("bcrypt");
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find();
+      return User.find().populate("feedbacks");
     },
 
     user: async (parent, { userId }) => {
-      return User.findOne({ _id: userId });
+      return User.findOne({ _id: userId }).populate("feedbacks");
     },
 
-    feedbacks: async (parent, { username }) => {
-      const params = username ? { username } : {};
-      return Feedback.find(params).sort({ createdAt: -1 });
+    feedbacks: async () => {
+      return Feedback.find().sort({ createdAt: -1 });
     },
     feedback: async (parent, { feedbackId }) => {
       return Feedback.findOne({ _id: feedbackId });

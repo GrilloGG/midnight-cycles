@@ -1,0 +1,82 @@
+.feedback-card {
+  background-color: rgba(0, 0, 0, 0.767);
+
+  border-radius: 10px;
+  color: white;
+  margin: 1rem 5rem 1rem 5rem;
+  padding: 1rem 5rem;
+}
+.feedback-title {
+  float: inline-start;
+  margin-bottom: 1rem;
+}
+.feedback-user {
+  font-weight: 600;
+  font-size: 20px;
+}
+.feedback-date {
+  font-weight: 200;
+  font-size: 15px;
+}
+.feedback-text {
+  font-size: 22px;
+}
+.reviews-div {
+  background-color: rgba(255, 255, 255, 0.842);
+  color: black;
+
+  margin-top: 3rem;
+  margin-right: 10%;
+  margin-left: 10%;
+  padding: 2rem 2rem 2rem 2rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.reviews-div h2 {
+  font-size: 35px;
+}
+
+@media screen and (max-width: 960px) {
+  .feedback-card {
+    background-color: rgba(0, 0, 0, 0.767);
+
+    border-radius: 10px;
+    color: white;
+    margin: 1rem 0 1rem 0;
+    padding: 1px;
+  }
+  .feedback-title {
+    float: inline-start;
+    margin-bottom: 0.5rem;
+  }
+  .feedback-user {
+    font-weight: 600;
+    font-size: 20px;
+  }
+  .feedback-date {
+    font-weight: 200;
+    font-size: 15px;
+  }
+  .feedback-text {
+    font-size: 19px;
+    padding-bottom: 5px;
+  }
+  .reviews-div {
+    background-color: rgba(255, 255, 255, 0.842);
+    color: black;
+
+    margin-top: 1rem;
+    margin-bottom: 5rem;
+    margin-right: 5%;
+    margin-left: 5%;
+    padding: 1rem 1rem 1rem 1rem;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .reviews-div h2 {
+    font-size: 25px;
+    margin-bottom: 1rem;
+  }
+}
