@@ -111,17 +111,6 @@ h6 {
   box-shadow: 0px 0px 10px 1px #000000;
 }
 
-.about-us {
-  height: 50vh;
-  line-height: 50vh;
-  text-align: center;
-}
-
-.contact-us {
-  height: 50vh;
-  line-height: 50vh;
-  text-align: center;
-}
 /* Services page */
 .services {
   display: flex;

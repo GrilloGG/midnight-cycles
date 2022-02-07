@@ -7,12 +7,9 @@ import { QUERY_FEEDBACKS } from "../utils/queries";
 
 export default function Home() {
   const { loading, data } = useQuery(QUERY_FEEDBACKS);
-  if (data) {
-    console.log(data);
-  }
 
   const feedbacks = data?.feedbacks || [];
-  console.log(feedbacks);
+
   return (
     <>
       <div className="background-picture-1">

@@ -1,13 +1,11 @@
-.contact-form-card {
-}
 .contact-form {
   margin-top: 5vh;
   margin-left: 25%;
   margin-right: 25%;
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
-
   box-shadow: 0 0 15px rgb(80, 79, 79);
+  margin-bottom: 3rem;
 }
 .form-contact {
   display: flex;

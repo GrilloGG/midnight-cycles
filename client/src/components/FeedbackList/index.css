@@ -1,15 +1,23 @@
 .feedback-card {
   background-color: rgba(0, 0, 0, 0.767);
-
   border-radius: 10px;
   color: white;
   margin: 1rem 5rem 1rem 5rem;
   padding: 1rem 5rem;
 }
+.feedback-card:nth-child(2n) {
+  background-color: #d96a03ce;
+  color: black;
+}
 .feedback-title {
   float: inline-start;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid white;
 }
+.feedback-card:nth-child(2n) .feedback-title {
+  border-bottom: 1px solid black;
+}
+
 .feedback-user {
   font-weight: 600;
   font-size: 20px;
@@ -24,10 +32,10 @@
 .reviews-div {
   background-color: rgba(255, 255, 255, 0.842);
   color: black;
-
   margin-top: 3rem;
   margin-right: 10%;
   margin-left: 10%;
+  margin-bottom: 3rem;
   padding: 2rem 2rem 2rem 2rem;
   border-radius: 10px;
   text-align: center;

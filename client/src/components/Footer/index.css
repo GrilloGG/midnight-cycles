@@ -41,3 +41,25 @@
   color: black;
   margin: 0 5px;
 }
+
+@media screen and (max-width: 960px) {
+  .icons-footer {
+    display: block;
+  }
+  .item-center {
+    flex: 0 1 auto;
+    width: 150px;
+    height: 100px;
+    position: absolute;
+    left: 25%;
+    transform: translateX(-50%);
+  }
+  .social-media-icons {
+    flex: 0 1 auto;
+    width: 150px;
+    height: 100px;
+    position: absolute;
+    right: -45%;
+    transform: translateX(-50%);
+  }
+}

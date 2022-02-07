@@ -9,7 +9,7 @@ const FeedbackList = ({ feedbacks }) => {
   return (
     <div>
       {feedbacks &&
-        feedbacks.map(feedback => (
+        feedbacks.slice(0, 5).map(feedback => (
           <div key={feedback._id} className="feedback-card">
             <div className="feedback-title">
               {" "}
