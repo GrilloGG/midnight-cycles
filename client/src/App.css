@@ -347,4 +347,13 @@ h6 {
     padding-top: 3vh;
     padding-bottom: 15vh;
   }
+
+  .account-background {
+    background-color: #000000d8;
+    padding: 2rem;
+    margin-right: 3%;
+    margin-left: 3%;
+    border-radius: 10px;
+    margin-top: 1rem;
+  }
 }

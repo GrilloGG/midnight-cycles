@@ -24,39 +24,26 @@ const Account = () => {
     event.preventDefault();
     try {
       const { data } = await deleteUser({});
-      console.log(data);
       Auth.logout();
       window.location.assign("/");
-    } catch (error) {
-      console.error(error);
-    }
+    } catch (error) {}
   };
 
   const [removeFeedback, { feedbackError }] = useMutation(REMOVE_FEEDBACK);
 
   const handleReviewDelete = async feedbackId => {
-    console.log(feedbackId);
     try {
       const { data } = await removeFeedback({
         variables: { feedbackId },
       });
-      console.log(data);
       window.location.reload();
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   const { loading, data } = useQuery(QUERY_ME);
   if (data) {
-    console.log(data.me.feedbacks);
   }
 
-  //if (data.me.feedbacks.length === 0) {
-  // return <h3>No feedbacks Yet</h3>;
-  //}
-
-  //console.log(data.me.feedbacks[0]);
   return (
     <div>
       {loading ? (

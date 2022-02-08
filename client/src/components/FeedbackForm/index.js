@@ -4,31 +4,16 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 
 import { ADD_FEEDBACK } from "../../utils/mutations";
-import { QUERY_FEEDBACKS } from "../../utils/queries";
 
 import Auth from "../../utils/auth";
 
 const FeedbackForm = () => {
   const [formState, setFormState] = useState("");
 
-  const [addFeedback, { error }] = useMutation(ADD_FEEDBACK, {
-    update(cache, { data: { addFeedback } }) {
-      try {
-        const { feedbacks } = cache.readQuery({ query: QUERY_FEEDBACKS });
-
-        cache.writeQuery({
-          query: QUERY_FEEDBACKS,
-          data: { feedbacks: [addFeedback, ...feedbacks] },
-        });
-      } catch (e) {
-        console.error(e);
-      }
-    },
-  });
+  const [addFeedback, { error }] = useMutation(ADD_FEEDBACK);
 
   const handleFormSubmit = async event => {
     event.preventDefault();
-    console.log(formState);
 
     try {
       const { data } = await addFeedback({
@@ -36,16 +21,13 @@ const FeedbackForm = () => {
           ...formState,
         },
       });
-      console.log(Auth.getProfile().data.email);
       setFormState({ feedbackText: "", feedbackAuthor: "" });
-    } catch (err) {
-      console.error(err);
-    }
+      window.location.assign("/");
+    } catch (err) {}
   };
 
   const handleChange = event => {
     const { name, value } = event.target;
-    console.log(event);
     if (name === "feedbackText" && value.length <= 280) {
       setFormState({ ...formState, [name]: value });
     }

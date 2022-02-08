@@ -3,7 +3,6 @@ import "../../App.css";
 
 const ContactForm = props => {
   const [formState, setFormState] = useState({ email: "" });
-  // update state based on form input changes
   const handleChange = event => {
     const { name, value } = event.target;
 
@@ -13,10 +12,8 @@ const ContactForm = props => {
     });
   };
 
-  // submit form
   const handleFormSubmit = async event => {
     event.preventDefault();
-    console.log(formState);
 
     setFormState({
       email: "",

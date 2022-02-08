@@ -60,9 +60,7 @@ const resolvers = {
 
     changePassword: async (parent, { password, newPassword }, context) => {
       const user = await User.findOne(context.user);
-      console.log(context.user);
       const correctPw = await user.isCorrectPassword(password);
-      console.log(correctPw);
       if (!correctPw) {
         throw new AuthenticationError("Current password could not be verified");
       }
@@ -99,7 +97,6 @@ const resolvers = {
           _id: feedbackId,
           feedbackAuthor: context.user.username,
         });
-        console.log(feedback);
         await User.findOneAndUpdate(
           { _id: context.user._id },
           { $pull: { feedbacks: feedback._id } }
