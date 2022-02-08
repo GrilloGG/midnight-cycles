@@ -36,7 +36,7 @@ const Account = () => {
       const { data } = await removeFeedback({
         variables: { feedbackId },
       });
-      window.location.reload();
+      window.location.assign("/");
     } catch (error) {}
   };
 
