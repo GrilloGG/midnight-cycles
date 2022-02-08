@@ -22,7 +22,7 @@ const resolvers = {
 
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id });
+        return User.findOne({ _id: context.user._id }).populate("feedbacks");
       }
       throw new AuthenticationError("You need to be logged in!");
     },
@@ -53,7 +53,7 @@ const resolvers = {
     },
     deleteUser: async (parent, args, context) => {
       if (context.user) {
-        return User.findOneAndDelete({ _id: context.user._id });
+        return await User.findOneAndDelete({ _id: context.user._id });
       }
       throw new AuthenticationError("You need to be logged in!");
     },
@@ -99,7 +99,7 @@ const resolvers = {
           _id: feedbackId,
           feedbackAuthor: context.user.username,
         });
-
+        console.log(feedback);
         await User.findOneAndUpdate(
           { _id: context.user._id },
           { $pull: { feedbacks: feedback._id } }

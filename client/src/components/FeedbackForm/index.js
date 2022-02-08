@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 
 import { ADD_FEEDBACK } from "../../utils/mutations";
-import { QUERY_FEEDBACKS, QUERY_ME } from "../../utils/queries";
+import { QUERY_FEEDBACKS } from "../../utils/queries";
 
 import Auth from "../../utils/auth";
 

@@ -23,7 +23,33 @@ export const ADD_USER = gql`
     }
   }
 `;
+export const DELETE_USER = gql`
+  mutation deleteUser {
+    deleteUser {
+      _id
+      username
+      email
+      password
+      feedbacks {
+        _id
+        feedbackText
+        feedbackAuthor
+        createdAt
+      }
+    }
+  }
+`;
 
+export const REMOVE_FEEDBACK = gql`
+  mutation removeFeedback($feedbackId: ID!) {
+    removeFeedback(feedbackId: $feedbackId) {
+      _id
+      feedbackText
+      feedbackAuthor
+      createdAt
+    }
+  }
+`;
 export const ADD_FEEDBACK = gql`
   mutation addFeedback($feedbackText: String!) {
     addFeedback(feedbackText: $feedbackText) {

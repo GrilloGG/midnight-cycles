@@ -15,6 +15,17 @@ export const QUERY_USER = gql`
   }
 `;
 
+export const QUERY_FEEDBACK = gql`
+  query feedback($feedbackId: ID!) {
+    feedback(feedbackId: $feedbackId) {
+      _id
+      feedbackText
+      feedbackAuthor
+      createdAt
+    }
+  }
+`;
+
 export const QUERY_FEEDBACKS = gql`
   query feedbacks {
     feedbacks {
