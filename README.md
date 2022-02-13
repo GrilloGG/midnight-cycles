@@ -2,8 +2,6 @@
 
 ## Table Of Contents
 
-- [Midnight Cycles](#midnight-cycles)
-  - [Table Of Contents](#table-of-contents)
   - [Description](#description)
   - [Installation](#installation)
   - [Usage](#usage)
